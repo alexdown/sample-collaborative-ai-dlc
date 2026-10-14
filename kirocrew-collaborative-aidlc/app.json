@@ -1,0 +1,57 @@
+{
+  "name": "collaborative-aidlc-kirocrew",
+  "version": "0.1.0",
+  "displayName": "Collaborative AI-DLC for KiroCrew",
+  "description": "Use Collaborative AI-DLC through the supported KiroCrew experience instead of deploying another custom UI.",
+  "author": "Collaborative AI-DLC contributors",
+  "license": "Apache-2.0",
+  "minKiroCrewVersion": "0.8.0",
+  "tags": ["aidlc", "development", "multi-agent", "governance"],
+  "highlights": [
+    "Pinned 25-stage AI-DLC profile",
+    "22 explicit human validation gates",
+    "Selectable Kiro, Claude Code, Codex, or OpenCode harness",
+    "Manual mixed-harness handoffs through the Remote Crew preview",
+    "File-native state, receipts, artifacts, and audit trail"
+  ],
+  "configuration": [
+    "Install and enable this app from the KiroCrew App Store local-install flow.",
+    "Select the collaborative-aidlc-conductor agent for the intent chat.",
+    "Choose an installed agent harness under Settings → Developer → Agent Backend."
+  ],
+  "agents": [
+    "agents/aidlc-conductor.json",
+    "agents/aidlc-architect-agent.json",
+    "agents/aidlc-architecture-reviewer-agent.json",
+    "agents/aidlc-aws-platform-agent.json",
+    "agents/aidlc-compliance-agent.json",
+    "agents/aidlc-delivery-agent.json",
+    "agents/aidlc-design-agent.json",
+    "agents/aidlc-developer-agent.json",
+    "agents/aidlc-devsecops-agent.json",
+    "agents/aidlc-operations-agent.json",
+    "agents/aidlc-pipeline-deploy-agent.json",
+    "agents/aidlc-product-agent.json",
+    "agents/aidlc-product-lead-agent.json",
+    "agents/aidlc-quality-agent.json"
+  ],
+  "skills": ["skills/collaborative-aidlc-kirocrew"],
+  "contributes": {
+    "commands": [
+      {
+        "id": "start-collaborative-aidlc-intent",
+        "title": "Start Collaborative AI-DLC intent",
+        "subtitle": "Run an AI-DLC intent in this repository using KiroCrew",
+        "icon": "Users",
+        "keywords": ["aidlc", "intent", "lifecycle", "multi-agent"],
+        "argument": {
+          "kind": "text",
+          "placeholder": "Describe the intent to build…",
+          "hint": "Include users, desired outcome, constraints, and out-of-scope items."
+        },
+        "prompt": "Run only if this chat uses the collaborative-aidlc-conductor agent. Otherwise ask me to select that agent and stop. Then load the collaborative-aidlc-kirocrew skill and start a governed Collaborative AI-DLC intent for: {argument}",
+        "autoSend": true
+      }
+    ]
+  }
+}

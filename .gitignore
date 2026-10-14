@@ -26,7 +26,6 @@ terraform/builds
 .vscode/
 .idea/
 .claude/
-.kiro/
 .coordination/
 .beads/
 *.swp

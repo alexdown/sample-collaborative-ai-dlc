@@ -121,6 +121,10 @@ Then configure agent credentials in **Admin → Agents** (a Bedrock API key for 
 > [!WARNING]
 > **This deploys real AWS infrastructure into your account**: VPC, Neptune, ECS Fargate, Lambda, API Gateway, DynamoDB, S3, CloudFront, Cognito, Bedrock AgentCore, ECR, and Secrets Manager. Some of these resources bill while idle (Neptune and the Fargate collaboration server in particular), and agent runs incur Bedrock model-invocation charges on top. Deployment takes 15 to 30 minutes. Tear everything down with the [destroy command](#destroy-infrastructure) when you're done evaluating.
 
+### Use Collaborative AI-DLC through KiroCrew
+
+If your team already uses KiroCrew, the repository also includes a [KiroCrew adapter for Collaborative AI-DLC](kirocrew-collaborative-aidlc/README.md). It uses KiroCrew as the customer-facing experience and agent control plane, so customers do not need to adopt another custom UI. This path does not deploy the Collaborative AI-DLC frontend or AWS control-plane resources. It also documents supervised mixed Kiro, Claude Code, Codex, and OpenCode handoffs through KiroCrew's Remote Crew preview.
+
 ## How it works
 
 Work is organized around **intents**. An intent is a title and a prompt (a feature, a bugfix, a whole greenfield system) scoped to a project. Starting an intent executes a workflow whose stages progress through three phases: **Inception** (requirements, user stories, units of work), **Construction** (parallel per-unit implementation lanes), and **Delivery** (fan-in, build and test, pull request).

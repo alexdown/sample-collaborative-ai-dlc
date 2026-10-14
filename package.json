@@ -69,6 +69,7 @@
     "release:prepare": "node scripts/release.mjs prepare",
     "release:check": "node scripts/release.mjs check",
     "test:release": "node --test scripts/test/*.test.mjs",
+    "kirocrew:validate": "python3 kirocrew-collaborative-aidlc/scripts/validate_bundle.py && python3 -m unittest discover -s kirocrew-collaborative-aidlc/tests -v",
     "prepare": "husky"
   },
   "devDependencies": {
